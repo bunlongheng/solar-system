@@ -1,6 +1,5 @@
-// components/SolarSystem.tsx
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Stars, Circle } from "@react-three/drei";
+import { OrbitControls, Stars } from "@react-three/drei";
 import Planet from "./Planet";
 
 const planets = [
@@ -23,10 +22,10 @@ const planets = [
 
 export default function SolarSystem() {
     return (
-        <Canvas camera={{ position: [0, 50, 150], fov: 45 }}>
-            <ambientLight intensity={0.5} />
-            <pointLight position={[10, 10, 10]} />
-            <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade />
+        <Canvas camera={{ position: [0, 20, 70], fov: 45 }}>
+            <ambientLight intensity={2} /> {/* Ambient light for overall illumination */}
+            <pointLight position={[10, 10, 10]} /> {/* Point light for highlights */}
+            <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade /> {/* Background stars */}
             {planets.map((planet, index) => (
                 <Planet
                     key={index}
@@ -36,18 +35,7 @@ export default function SolarSystem() {
                     position={planet.position}
                 />
             ))}
-            {/* Add orbital paths */}
-            {planets.slice(1).map((planet, index) => (
-                <Circle
-                    key={index}
-                    args={[planet.position[0], 64]}
-                    position={[0, 0, 0]}
-                    rotation={[-Math.PI / 2, 0, 0]}
-                >
-                    <meshBasicMaterial color="gray" transparent opacity={0.2} />
-                </Circle>
-            ))}
-            <OrbitControls />
+            <OrbitControls /> {/* Enable camera controls */}
         </Canvas>
     );
 }
