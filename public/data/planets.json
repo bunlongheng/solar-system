@@ -1,0 +1,257 @@
+[
+  {
+      "name": "Sun",
+      "radius": 5,
+      "texture": "/textures/sun.jpg",
+      "position": [0, 0, 0],
+      "details": {
+          "diameter": "1.39 million km",
+          "temperature": "5,500°C",
+          "composition": "Hydrogen (74%), Helium (24%)",
+          "nickname": "The Star",
+          "color": "Yellow",
+          "moons": 0,
+          "rotationPeriod": "25 days",
+          "orbitalPeriod": "N/A",
+          "funFact": "The Sun contains 99.86% of the mass in the Solar System."
+      }
+  },
+  {
+      "name": "Mercury",
+      "radius": 0.5,
+      "texture": "/textures/mercury.jpg",
+      "position": [10, 0, 0],
+      "details": {
+          "diameter": "4,880 km",
+          "temperature": "430°C (day), -180°C (night)",
+          "composition": "Iron (70%), Silicates (30%)",
+          "nickname": "The Swift Planet",
+          "color": "Gray",
+          "moons": 0,
+          "rotationPeriod": "59 days",
+          "orbitalPeriod": "88 days",
+          "funFact": "Mercury has the shortest year of all planets."
+      }
+  },
+  {
+      "name": "Venus",
+      "radius": 1.2,
+      "texture": "/textures/venus.jpg",
+      "position": [15, 0, 0],
+      "details": {
+          "diameter": "12,104 km",
+          "temperature": "465°C",
+          "composition": "Carbon Dioxide (96.5%), Nitrogen (3.5%)",
+          "nickname": "The Morning Star",
+          "color": "Yellowish-White",
+          "moons": 0,
+          "rotationPeriod": "243 days",
+          "orbitalPeriod": "225 days",
+          "funFact": "Venus rotates in the opposite direction to most planets."
+      }
+  },
+  {
+      "name": "Earth",
+      "radius": 1.5,
+      "texture": "/textures/earth.jpg",
+      "position": [20, 0, 0],
+      "details": {
+          "diameter": "12,742 km",
+          "temperature": "15°C (average)",
+          "composition": "Nitrogen (78%), Oxygen (21%)",
+          "nickname": "The Blue Planet",
+          "color": "Blue",
+          "moons": 1,
+          "rotationPeriod": "24 hours",
+          "orbitalPeriod": "365 days",
+          "funFact": "Earth is the only known planet to support life."
+      }
+  },
+  {
+      "name": "Moon",
+      "radius": 0.4,
+      "texture": "/textures/moon.jpg",
+      "position": [21, 0.5, 0],
+      "details": {
+          "diameter": "3,474 km",
+          "temperature": "-173°C to 127°C",
+          "composition": "Oxygen (43%), Silicon (21%)",
+          "nickname": "Earth's Companion",
+          "color": "Gray",
+          "moons": 0,
+          "rotationPeriod": "27 days",
+          "orbitalPeriod": "27 days",
+          "funFact": "The Moon is Earth's only natural satellite."
+      }
+  },
+  {
+      "name": "Mars",
+      "radius": 1.2,
+      "texture": "/textures/mars.jpg",
+      "position": [25, 0, 0],
+      "details": {
+          "diameter": "6,779 km",
+          "temperature": "-63°C (average)",
+          "composition": "Carbon Dioxide (95%), Nitrogen (2.7%)",
+          "nickname": "The Red Planet",
+          "color": "Red",
+          "moons": 2,
+          "rotationPeriod": "24.6 hours",
+          "orbitalPeriod": "687 days",
+          "funFact": "Mars has the tallest volcano in the Solar System, Olympus Mons."
+      }
+  },
+  {
+      "name": "Jupiter",
+      "radius": 3,
+      "texture": "/textures/jupiter.jpg",
+      "position": [35, 0, 0],
+      "details": {
+          "diameter": "139,820 km",
+          "temperature": "-145°C (average)",
+          "composition": "Hydrogen (90%), Helium (10%)",
+          "nickname": "The Giant Planet",
+          "color": "Orange and White",
+          "moons": 79,
+          "rotationPeriod": "9.9 hours",
+          "orbitalPeriod": "12 years",
+          "funFact": "Jupiter's Great Red Spot is a massive storm that has raged for centuries."
+      }
+  },
+  {
+      "name": "Saturn",
+      "radius": 2.7,
+      "texture": "/textures/saturn.jpg",
+      "position": [45, 0, 0],
+      "details": {
+          "diameter": "116,460 km",
+          "temperature": "-178°C (average)",
+          "composition": "Hydrogen (96%), Helium (3%)",
+          "nickname": "The Ringed Planet",
+          "color": "Pale Gold",
+          "moons": 83,
+          "rotationPeriod": "10.7 hours",
+          "orbitalPeriod": "29 years",
+          "funFact": "Saturn's rings are made mostly of ice particles."
+      }
+  },
+  {
+      "name": "Uranus",
+      "radius": 2,
+      "texture": "/textures/uranus.jpg",
+      "position": [55, 0, 0],
+      "details": {
+          "diameter": "50,724 km",
+          "temperature": "-195°C (average)",
+          "composition": "Hydrogen (83%), Helium (15%)",
+          "nickname": "The Ice Giant",
+          "color": "Pale Blue",
+          "moons": 27,
+          "rotationPeriod": "17 hours",
+          "orbitalPeriod": "84 years",
+          "funFact": "Uranus rotates on its side, likely due to a collision."
+      }
+  },
+  {
+      "name": "Neptune",
+      "radius": 1.9,
+      "texture": "/textures/neptune.jpg",
+      "position": [65, 0, 0],
+      "details": {
+          "diameter": "49,244 km",
+          "temperature": "-201°C (average)",
+          "composition": "Hydrogen (80%), Helium (19%)",
+          "nickname": "The Windy Planet",
+          "color": "Deep Blue",
+          "moons": 14,
+          "rotationPeriod": "16 hours",
+          "orbitalPeriod": "165 years",
+          "funFact": "Neptune has the strongest winds in the Solar System."
+      }
+  },
+  {
+      "name": "Pluto",
+      "radius": 0.6,
+      "texture": "/textures/pluto.jpg",
+      "position": [75, 0, 0],
+      "details": {
+          "diameter": "2,377 km",
+          "temperature": "-229°C (average)",
+          "composition": "Nitrogen (98%), Methane (1%)",
+          "nickname": "The Dwarf Planet",
+          "color": "Brown",
+          "moons": 5,
+          "rotationPeriod": "6.4 days",
+          "orbitalPeriod": "248 years",
+          "funFact": "Pluto was reclassified as a dwarf planet in 2006."
+      }
+  },
+  {
+      "name": "Ceres",
+      "radius": 0.5,
+      "texture": "/textures/ceres.jpg",
+      "position": [85, 0, 0],
+      "details": {
+          "diameter": "946 km",
+          "temperature": "-105°C (average)",
+          "composition": "Water Ice, Silicates",
+          "nickname": "The Dwarf Planet",
+          "color": "Gray",
+          "moons": 0,
+          "rotationPeriod": "9 hours",
+          "orbitalPeriod": "4.6 years",
+          "funFact": "Ceres is the largest object in the asteroid belt."
+      }
+  },
+  {
+      "name": "Eris",
+      "radius": 0.7,
+      "texture": "/textures/eris.jpg",
+      "position": [95, 0, 0],
+      "details": {
+          "diameter": "2,326 km",
+          "temperature": "-243°C (average)",
+          "composition": "Methane Ice, Nitrogen Ice",
+          "nickname": "The Dwarf Planet",
+          "color": "Gray",
+          "moons": 1,
+          "rotationPeriod": "25.9 hours",
+          "orbitalPeriod": "558 years",
+          "funFact": "Eris is more massive than Pluto."
+      }
+  },
+  {
+      "name": "Haumea",
+      "radius": 0.7,
+      "texture": "/textures/haumea.jpg",
+      "position": [105, 0, 0],
+      "details": {
+          "diameter": "1,632 km",
+          "temperature": "-241°C (average)",
+          "composition": "Water Ice, Rock",
+          "nickname": "The Egg-Shaped Planet",
+          "color": "Gray",
+          "moons": 2,
+          "rotationPeriod": "3.9 hours",
+          "orbitalPeriod": "285 years",
+          "funFact": "Haumea has a unique elongated shape."
+      }
+  },
+  {
+      "name": "Makemake",
+      "radius": 0.7,
+      "texture": "/textures/makemake.jpg",
+      "position": [115, 0, 0],
+      "details": {
+          "diameter": "1,430 km",
+          "temperature": "-243°C (average)",
+          "composition": "Methane Ice, Ethane Ice",
+          "nickname": "The Dwarf Planet",
+          "color": "Reddish-Brown",
+          "moons": 1,
+          "rotationPeriod": "22.5 hours",
+          "orbitalPeriod": "309 years",
+          "funFact": "Makemake has no atmosphere."
+      }
+  }
+]
