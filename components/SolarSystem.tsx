@@ -3,26 +3,48 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
 import Planet from "./Planet";
 
+type PlanetData = {
+    name: string;
+    radius: number;
+    texture: string;
+    position: [number, number, number];
+    details?: {
+        diameter: string;
+        temperature: string;
+        composition: string;
+        nickname: string;
+        color: string;
+        moons: number;
+        rotationPeriod: string;
+        orbitalPeriod: string;
+        funFact: string;
+    };
+};
+
 export default function SolarSystem() {
-    const [planets, setPlanets] = useState([]);
-    const [selectedPlanet, setSelectedPlanet] = useState(null);
+    const [planets, setPlanets] = useState<PlanetData[]>([]);
+    const [selectedPlanet, setSelectedPlanet] = useState<PlanetData | null>(null);
     const [loading, setLoading] = useState(true);
 
-    // Fetch planet data from public/data/planets.json
     useEffect(() => {
-        fetch("/data/planets.json")
+        const controller = new AbortController();
+        fetch("/data/planets.json", { signal: controller.signal })
             .then((response) => response.json())
-            .then((data) => {
+            .then((data: PlanetData[]) => {
                 setPlanets(data);
                 setLoading(false);
             })
             .catch((error) => {
-                console.error("Error loading planet data:", error);
-                setLoading(false);
+                if (error.name !== "AbortError") {
+                    console.error("Error loading planet data:", error);
+                    setLoading(false);
+                }
             });
+
+        return () => controller.abort();
     }, []);
 
-    const handlePlanetClick = (planet) => {
+    const handlePlanetClick = (planet: PlanetData) => {
         setSelectedPlanet(planet);
     };
 
@@ -32,7 +54,7 @@ export default function SolarSystem() {
                 <ambientLight intensity={0.5} />
                 <pointLight position={[10, 10, 10]} />
                 <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade />
-                {!loading && planets.map((planet, index) => (
+                {!loading && planets.map((planet: PlanetData, index: number) => (
                     <Planet
                         key={index}
                         name={planet.name}
@@ -45,7 +67,6 @@ export default function SolarSystem() {
                 <OrbitControls />
             </Canvas>
 
-            {/* Display planet details */}
             {selectedPlanet && (
                 <div
                     style={{
@@ -61,21 +82,20 @@ export default function SolarSystem() {
                 >
                     <h2>{selectedPlanet.name}</h2>
                     <ul>
-                        <li><strong>Diameter:</strong> {selectedPlanet.details.diameter}</li>
-                        <li><strong>Temperature:</strong> {selectedPlanet.details.temperature}</li>
-                        <li><strong>Composition:</strong> {selectedPlanet.details.composition}</li>
-                        <li><strong>Nickname:</strong> {selectedPlanet.details.nickname}</li>
-                        <li><strong>Color:</strong> {selectedPlanet.details.color}</li>
-                        <li><strong>Moons:</strong> {selectedPlanet.details.moons}</li>
-                        <li><strong>Rotation Period:</strong> {selectedPlanet.details.rotationPeriod}</li>
-                        <li><strong>Orbital Period:</strong> {selectedPlanet.details.orbitalPeriod}</li>
-                        <li><strong>Fun Fact:</strong> {selectedPlanet.details.funFact}</li>
+                        <li><strong>Diameter:</strong> {selectedPlanet.details?.diameter}</li>
+                        <li><strong>Temperature:</strong> {selectedPlanet.details?.temperature}</li>
+                        <li><strong>Composition:</strong> {selectedPlanet.details?.composition}</li>
+                        <li><strong>Nickname:</strong> {selectedPlanet.details?.nickname}</li>
+                        <li><strong>Color:</strong> {selectedPlanet.details?.color}</li>
+                        <li><strong>Moons:</strong> {selectedPlanet.details?.moons}</li>
+                        <li><strong>Rotation Period:</strong> {selectedPlanet.details?.rotationPeriod}</li>
+                        <li><strong>Orbital Period:</strong> {selectedPlanet.details?.orbitalPeriod}</li>
+                        <li><strong>Fun Fact:</strong> {selectedPlanet.details?.funFact}</li>
                     </ul>
                     <button onClick={() => setSelectedPlanet(null)}>Close</button>
                 </div>
             )}
 
-            {/* Loading spinner */}
             {loading && (
                 <div
                     style={{
