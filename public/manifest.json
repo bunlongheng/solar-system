@@ -1,0 +1,21 @@
+{
+    "name": "Solar System Explorer",
+    "short_name": "Solar System",
+    "description": "Explore the solar system in 3D with real-time visuals.",
+    "icons": [
+      {
+        "src": "/icons/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/icons/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "display": "standalone"
+  }
